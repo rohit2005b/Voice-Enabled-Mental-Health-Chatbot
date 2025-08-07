@@ -1,0 +1,67 @@
+  <!-- 🆘 Helpline Section -->
+  <div class="helpline-section" style="margin: 30px auto 0 auto; max-width: 400px; background: #fff8fa; border-radius: 16px; box-shadow: 0 2px 8px #eee; padding: 18px 20px; text-align: left;">
+    <h2 style="color: #d63384; font-size: 1.2em; margin-bottom: 10px;">🆘 Helplines Near Hyderabad</h2>
+    <ul style="padding-left: 18px;">
+      <li><strong>Roshni Helpline (Emotional Support):</strong> <a href="tel:914066202000">+91 40 6620 2000</a></li>
+      <li><strong>Sneha India (Suicide Prevention):</strong> <a href="tel:04424640050">044-24640050</a></li>
+      <li><strong>iCALL (Mental Health):</strong> <a href="tel:9152987821">9152987821</a></li>
+      <li><strong>Vandrevala Foundation:</strong> <a href="tel:9999666555">9999666555</a></li>
+    </ul>
+    <div style="margin-top: 12px;">
+      <button onclick="window.location.href='tel:914066202000'" style="background: #ff69b4; color: white; border: none; border-radius: 8px; padding: 10px 18px; font-size: 1em; cursor: pointer;">📞 Call a Professional Therapist</button>
+    </div>
+    <div style="font-size: 0.95em; color: #888; margin-top: 8px;">If you or someone you know is in crisis, please reach out to these helplines or a mental health professional.</div>
+  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Psychological Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_KEY_HERE"></script>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+
+  <!-- 🌸 Floating flowers in background, not over webcam -->
+
+  <div class="floating-flower flower1">❀</div>
+  <div class="floating-flower flower2">❀</div>
+  <div class="floating-flower flower3">❀</div>
+  <div class="floating-flower flower4">❀</div>
+  <div class="floating-flower flower5">❀</div>
+  <div class="floating-flower flower6">❀</div>
+  <div class="floating-flower flower7">❀</div>
+  <div class="floating-flower flower8">❀</div>
+  <div class="floating-flower flower9">❀</div>
+  <div class="floating-flower flower10">❀</div>
+  
+
+<div style="margin-top: 20px; text-align: center;">
+  <h3>🎥 Live Webcam</h3>
+  <video id="webcam" width="320" height="240" autoplay style="border-radius: 12px; box-shadow: 0 0 10px #ccc; background-color: black;"></video>
+  <br>
+  <button onclick="startCamera()" style="margin-top: 10px; padding: 8px 16px; background-color: #ff69b4; color: white; border: none; border-radius: 8px;">Start Camera</button>
+  <div id="emotion-result" style="margin-top: 10px; font-size: 1.2em; color: #d63384;"></div>
+</div>
+
+
+
+
+  <!-- 💬 Chat UI -->
+  <div class="chat-wrapper">
+    <h1>🌸 Your Wellness Companion 🌸</h1>
+    <div id="chatbox"></div>
+    <div class="input-box">
+      <input type="text" id="userInput" placeholder="Speak or type how you feel..." />
+      <button onclick="sendMessage()">💬</button>
+      <button onclick="startRecognition()">🎙️</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

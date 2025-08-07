@@ -1,0 +1,272 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": [
+        "Hello! How can I help you today?",
+        "Hi there! What would you like to talk about?",
+        "Hey! I'm here to listen."
+      ]
+    },
+    {
+      "tag": "feeling_low",
+      "patterns": [
+        "I feel low", "I'm feeling sad", "I feel down", "I'm unhappy", "Feeling blue", "I don't feel good", "Sad", "I'm not okay"
+      ],
+      "responses": [
+        "I'm sorry you're feeling this way. Would you like to talk about what's making you feel this way?"
+      ],
+      "followups": [
+        {
+          "question": "Thank you for sharing with me. Would you like to talk more about what's been bothering you?",
+          "expected_responses": {
+            "yes": { "responses": ["I'm here to listen. Please go ahead."] },
+            "no": { "responses": ["That's okay. We can talk about something else or try some coping strategies if you want."] }
+          }
+        },
+        {
+          "question": "Have you felt this way for a long time, or is it something recent?",
+          "expected_responses": {
+            "long time": { "responses": ["That sounds really tough. Have you been able to talk to anyone about it?"] },
+            "recent": { "responses": ["Sometimes new feelings can be overwhelming. Would you like to talk about what triggered it?"] },
+            "other": { "responses": ["Thank you for sharing. Would you like to try some coping strategies together?"] }
+          }
+        },
+        {
+          "question": "Would you like to try some coping strategies together?",
+          "expected_responses": {
+            "yes": { "responses": [
+              "Let's try: writing down your feelings, taking a walk, or listening to music.",
+              "You could try grounding techniques, like naming five things you can see, four you can touch, three you can hear, two you can smell, and one you can taste.",
+              "How about practicing deep breathing or progressive muscle relaxation?",
+              "Journaling your thoughts or talking to a friend can also help."
+            ] },
+            "no": { "responses": [
+              "That's okay. If you want to try later, let me know.",
+              "No problem. Remember, self-care is important. I'm here if you change your mind."
+            ] }
+          }
+        },
+        {
+          "question": "What do you usually do when you feel this way? Has anything helped in the past?",
+          "expected_responses": {
+            "yes": { "responses": ["That's great! Even small things can make a difference. Would you like to share what helped?"] },
+            "no": { "responses": ["That's okay. Sometimes it takes time to find what helps. Would you like to try something new together?"] },
+            "other": { "responses": ["Thank you for sharing. Would you like to try a new coping strategy?"] }
+          }
+        },
+        {
+          "question": "Is there someone in your life you feel comfortable talking to about your feelings?",
+          "expected_responses": {
+            "yes": { "responses": ["Reaching out can be really helpful. I'm glad you have support."] },
+            "no": { "responses": ["That's okay. Remember, you're not alone. I'm here for you whenever you need to talk."] },
+            "other": { "responses": ["Thank you for sharing. If you ever want to talk, I'm here."] }
+          }
+        },
+        {
+          "question": "Would you like to try a short mindfulness or relaxation exercise together?",
+          "expected_responses": {
+            "yes": { "responses": ["Let's try a simple breathing exercise: inhale slowly, hold, and exhale. Focus on your breath for a few moments."] },
+            "no": { "responses": ["That's okay. We can try something else or just talk."] },
+            "other": { "responses": ["No problem. Let me know if you change your mind."] }
+          }
+        },
+        {
+          "question": "Sometimes expressing yourself creatively can help. Have you tried drawing, writing, or music when you feel low?",
+          "expected_responses": {
+            "yes": { "responses": ["That's wonderful! Creative expression can be very healing."] },
+            "no": { "responses": ["Maybe you could give it a try. Even doodling or listening to music can help."] },
+            "other": { "responses": ["Thank you for sharing. Would you like more ideas?"] }
+          }
+        },
+        {
+          "question": "If at any point you feel better, you can let me know by saying 'I feel better now'. I'll always be here for you.",
+          "expected_responses": {
+            "i feel better now": { "responses": ["I'm always here to help you out. Always have a smile!"] },
+            "other": { "responses": ["Thank you for sharing. Is there anything else you'd like to talk about or try?"] }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "crisis_suicidal",
+      "patterns": [
+        "I want to die", "I am suicidal", "I want to end my life", "I can't go on", "I feel like giving up", "I am thinking about suicide", "I wish I wasn't here", "I feel like hurting myself"
+      ],
+      "responses": [
+        "I'm really sorry you're feeling this way. You're not alone, and help is available. Would you like to talk to a professional or call a helpline?"
+      ],
+      "followups": [
+        {
+          "question": "Would you like me to connect you to a helpline or therapist now?",
+          "expected_responses": {
+            "yes": { "responses": ["Here are some helplines: Roshni (+91 40 6620 2000), Sneha (044-24640050), iCALL (9152987821). Please reach out, you matter!"] },
+            "no": { "responses": ["Okay. Remember, you can reach out anytime. You're not alone."] }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "anxiety",
+      "patterns": [
+        "I feel anxious", "I'm stressed out", "I have anxiety", "Feeling nervous", "I'm worried about something"
+      ],
+      "responses": [
+        "That sounds tough. What do you think is causing your anxiety?"
+      ],
+      "followups": [
+        {
+          "question": "Would you like to try some breathing exercises to calm down?",
+          "expected_responses": {
+            "yes": { "responses": [
+              "Great! Take a deep breath in... and out. Repeat this five times.",
+              "Let's try this: inhale slowly through your nose for 4 seconds, hold for 7 seconds, exhale through your mouth for 8 seconds.",
+              "You can also try box breathing: inhale for 4 seconds, hold for 4, exhale for 4, hold for 4, and repeat.",
+              "Progressive muscle relaxation can help: tense and relax each muscle group from head to toe."
+            ] },
+            "no": { "responses": [
+              "No worries. You can try them anytime you want.",
+              "Alright. I'm here if you want to try other ways to cope.",
+              "If you prefer, we can talk about other coping strategies like mindfulness or visualization."
+            ] }
+          },
+          "id": "anxiety_breathing"
+        }
+      ]
+    },
+    {
+      "tag": "stress",
+      "patterns": [
+        "I'm feeling stressed", "Too much pressure", "I can't handle stress", "Stress is overwhelming me"
+      ],
+      "responses": [
+        "I'm sorry to hear that you're feeling stressed. Would you like me to provide some stress relief techniques?"
+      ],
+      "followups": [
+        {
+          "question": "Would you like to try some stress relief techniques like yoga, breathing, or relaxation?",
+          "expected_responses": {
+            "yes": { "responses": [
+              "Yoga can be very helpful for stress. Even a few gentle stretches or poses can help you relax.",
+              "Try this: sit comfortably, close your eyes, and take slow, deep breaths for a minute.",
+              "Progressive muscle relaxation: tense and relax each muscle group from head to toe.",
+              "Guided meditation or listening to calming music can also help reduce stress.",
+              "Would you like a YouTube link for a short yoga or relaxation session? https://www.youtube.com/user/yogawithadriene"
+            ] },
+            "no": { "responses": [
+              "That's fine. Feel free to ask anytime you want advice.",
+              "Okay, I'm here to listen if you want to talk.",
+              "Remember, sometimes just talking about your stress can help lighten the load."
+            ] }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "sleep_issues",
+      "patterns": [
+        "I can't sleep", "I'm having trouble sleeping", "Insomnia", "Sleep problems"
+      ],
+      "responses": [
+        "Sleep troubles are tough. Would you like some tips to improve your sleep?"
+      ],
+      "followups": [
+        {
+          "question": "Would you like to hear some tips for better sleep hygiene?",
+          "expected_responses": {
+            "yes": { "responses": [
+              "Try to keep a consistent sleep schedule, even on weekends.",
+              "Avoid screens at least an hour before bedtime to help your brain relax.",
+              "Practice a relaxing bedtime routine, like reading or listening to calm music.",
+              "If you can't sleep, get up and do something relaxing until you feel sleepy again."
+            ] },
+            "no": { "responses": [
+              "Okay, if you want help later, just ask!",
+              "No problem. Sleep well when you can.",
+              "If you ever want to talk about your sleep, I'm here to help."
+            ] }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "academic_stress",
+      "patterns": [
+        "I don't like studying", "I hate exams", "I am not motivated to study", "I am stressed about exams", "I can't focus on studies", "I am failing in school", "I am worried about my grades"
+      ],
+      "responses": [
+        "Academic stress is common. Would you like to talk about what's making studies difficult for you?"
+      ],
+      "followups": [
+        {
+          "question": "Is there a particular subject or exam that's worrying you?",
+          "expected_responses": {
+            "yes": { "responses": ["Which subject is it? Maybe I can help you with some tips."] },
+            "no": { "responses": ["That's okay. Sometimes talking about it helps. Would you like to try some study techniques together?"] }
+          }
+        },
+        {
+          "question": "Which subject is it? Maybe I can help you with some tips.",
+          "expected_responses": {
+            "maths": { "responses": [
+              "Math can be challenging, but practice makes perfect! Try breaking problems into smaller steps, and don't hesitate to ask for help when stuck.",
+              "Here are some helpful YouTube channels for learning maths: https://www.youtube.com/user/patrickJMT, https://www.youtube.com/user/khanacademy, https://www.youtube.com/c/MathAntics",
+              "Use visual aids like diagrams, and practice with past exam papers. Would you like more tips or resources?"
+            ] },
+            "other": { "responses": ["That's a tough subject for many. Would you like some general study tips or specific resources?"] }
+          }
+        },
+        {
+          "question": "Would you like to try some study techniques together?",
+          "expected_responses": {
+            "yes": { "responses": [
+              "Let's try making a simple study plan or using flashcards.",
+              "The Pomodoro technique (study for 25 minutes, then take a 5-minute break) can help with focus.",
+              "Active recall and spaced repetition are great for memorizing information.",
+              "Studying with a friend or teaching someone else can also make learning easier."
+            ] },
+            "no": { "responses": [
+              "No problem. If you want to talk about studies later, I'm here.",
+              "Remember, it's okay to take breaks and care for your mental health while studying."
+            ] }
+          }
+        },
+        {
+          "question": "If at any point you feel better, you can let me know by saying 'I feel better now'. I'll always be here for you.",
+          "expected_responses": {
+            "i feel better now": { "responses": ["I'm really happy to hear that. Keep taking care of yourself! 🌟"] },
+            "other": { "responses": ["Thank you for sharing. Is there anything else you'd like to talk about or try?"] }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "gratitude",
+      "patterns": ["Thanks", "Thank you", "Thanks a lot", "Thank you so much"],
+      "responses": [
+        "You're welcome!",
+        "Glad I could help!",
+        "Anytime! Feel free to talk anytime."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you later", "I have to go", "Talk to you later"],
+      "responses": [
+        "Take care! Remember, I'm always here if you want to talk.",
+        "Goodbye! Stay safe and be well.",
+        "See you soon! Feel free to come back anytime."
+      ]
+    },
+    {
+      "tag": "no_match",
+      "patterns": [],
+      "responses": [
+        "I'm not sure I understand. Can you tell me more?",
+        "Sorry, can you please rephrase that?",
+        "I didn't quite get that. Could you explain?"
+      ]
+    }
+  ]
+}
